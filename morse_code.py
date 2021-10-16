@@ -1,13 +1,18 @@
+#this line of code defines that we have declared a dictionary where key is the alphabet and the answer to key is morse code of particular alphabet
 MORSE_CODE={'A':'.-','B':'-...','C':'-.-.','D':'-..','E':'.','F':'..-.','G':'--.','H':'....','I':'..','J':'.---','K':'-.-','L':'.-..','M':'--','N':'-.','O':'---','P':'.--.','Q':'--.-','R':'.-.','S':'...','T':'-','U':'..-','V':'...-','W':'.--','X':'-..-','Y':'-.--','Z':'--..','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','0':'-----',',':'--..--','.':'.-.-.-','?':'..--..','/':'-..-.','-':'-....-','(':'-.--.',')':'-.--.-'}
+#this function encrypts the message 
 def encoder(message):
     encoded =''
+    #this loop arranges the letters of encrypted message in ascending order separately and combines them back together 
     for letter in message:
         if letter != ' ':
             encoded += MORSE_CODE[letter] + ' '
         else:
-            encoded += ' '
+    encoded += ' '
+    #this function gives the encrypted message as output
     print("encoded message: ",encoded)
     menu()
+    #this function decrypts the encrypted message 
 def decryption(message):
    message += ' '
    decipher = ''
@@ -24,6 +29,7 @@ def decryption(message):
          else:
             decipher += list(MORSE_CODE.keys())[list(MORSE_CODE.values()).index(mycitext)]
             mycitext = ''
+            #this function gives the decrypted message as output 
    print("decoded message:",decipher)
    menu()
 def menu():
